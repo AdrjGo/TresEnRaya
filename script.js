@@ -1,26 +1,19 @@
-const X_TEXT = 'X';
-const O_TEXT = 'O';
-const winnerIndicator = 'lightgreen';
+let playerText = document.getElementById("text");
+let restartBtn = document.getElementById("restartBtn");
+let boxes = Array.from(document.getElementsByClassName("box"));
 
+let winnerIndicator = getComputedStyle(document.body).getPropertyValue(
+  "--winning-blocks"
+);
+
+const O_TEXT = "O";
+const X_TEXT = "X";
 let currentPlayer = X_TEXT;
 let spaces = Array(9).fill(null);
-const playerText = document.getElementById('playerText');
-const boxes = Array.from(docuemnt.getElementsByClassName('cell'));
 
-function startGame(){
-    currentPlayer = X_TEXT;
-    spaces =  Array(9).fill(null);
-    playerText.innerHTML = 'Turno de ${currentPlayer}';
-
-    boxes.forEach((box, index)=>{
-        box.innerText = '';
-        box.style.backgroundColor = '';
-        box.removeEventListener('click', boxCliend);
-        box.addEventListener('click', boxClicked,{ once: true});
-    });
-}
-
-
+const startGame = () => {
+  boxes.forEach((box) => box.addEventListener("click", boxClicked));
+};
 
 function boxClicked(e) {
     const id = e.target.id;
