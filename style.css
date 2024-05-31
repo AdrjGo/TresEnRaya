@@ -76,21 +76,3 @@ h2 {
   color: #9a87e2;
   font-size: 1.5em;
 }
-
-#sixInRowBtn,
-#threeInRowBtn {
-  background-color: #a487d3;
-  color: #000000;
-  border: none;
-  padding: 10px 20px;
-  font-size: 1.5em;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  margin-top: 20px;
-  margin-right: 10px;
-}
-
-#sixInRowBtn:hover,
-#threeInRowBtn:hover {
-  background-color: #830000;
-}

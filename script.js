@@ -58,61 +58,17 @@ function playerWin() {
   return false;
 }
 
+restartBtn.addEventListener("click", restartGame);
+function restartGame() {
+  playerText.innerHTML = "TRES EN RAYA";
+
+  boxes.forEach((box) => {
+    box.innerText = "";
+    box.classList.remove("X", "O", "winning-box");
+  });
+
+  spaces = Array(9).fill(null);
+  currentPlayer = X_TEXT;
+}
+
 startGame();
-
-const sixInRowBtn = document.getElementById("sixInRowBtn");
-const threeInRowBtn = document.getElementById("threeInRowBtn");
-const board = document.getElementById("board");
-
-
-let boardSize = 3;
-
-function updateBoard() {
-  board.innerHTML = "";
-  board.style.gridTemplateColumns = `repeat(${boardSize}, 100px)`;
-  board.style.gridGap = `${10 / boardSize}px`;
-
-  for (let i = 0; i < boardSize * boardSize; i++) {
-    const box = document.createElement("div");
-    box.classList.add("box");
-    box.id = i;
-    box.addEventListener("click", boxClicked);
-    board.appendChild(box);
-  }
-}
-
-sixInRowBtn.addEventListener("click", () => {
-  boardSize = 6;
-  spaces = Array(boardSize * boardSize).fill(null);
-  updateBoard();
-});
-
-threeInRowBtn.addEventListener("click", () => {
-  boardSize = 3;
-  spaces = Array(boardSize * boardSize).fill(null);
-  updateBoard();
-});
-
-function boxClicked(e) {
-  const id = e.target.id;
-
-  if (!spaces[id]) {
-    spaces[id] = currentPlayer;
-    e.target.innerText = currentPlayer;
-
-    const winner = playerWin();
-    if (winner) {
-      ganadorText.innerHTML = `${currentPlayer} GANASTE!`;
-      highlightWin(winner);
-    } else {
-      switchPlayer();
-    }
-  }
-}
-
-function switchPlayer() {
-  currentPlayer = currentPlayer === X_TEXT ? O_TEXT : X_TEXT;
-}
-
-// Update the board for the initial 3x3 grid
-updateBoard();
