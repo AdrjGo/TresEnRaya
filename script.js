@@ -2,10 +2,6 @@ let playerText = document.getElementById("text");
 let restartBtn = document.getElementById("restartBtn");
 let boxes = Array.from(document.getElementsByClassName("box"));
 
-let winnerIndicator = getComputedStyle(document.body).getPropertyValue(
-  "--winning-blocks"
-);
-
 const O_TEXT = "O";
 const X_TEXT = "X";
 let currentPlayer = X_TEXT;
