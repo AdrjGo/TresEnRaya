@@ -1,10 +1,13 @@
 let playerText = document.getElementById("text");
+let playerIniciaText = document.getElementById("playerIniciaText");
+let ganadorText = document.getElementById("ganador");
 let restartBtn = document.getElementById("restartBtn");
 let boxes = Array.from(document.getElementsByClassName("box"));
 
 const O_TEXT = "O";
 const X_TEXT = "X";
-let currentPlayer = X_TEXT;
+let currentPlayer = Math.random() < 0.5 ? O_TEXT : X_TEXT;
+playerIniciaText.innerHTML = "Inicia: " + currentPlayer;
 let spaces = Array(9).fill(null);
 
 const startGame = () => {
@@ -20,7 +23,7 @@ function boxClicked(e) {
 
     const winner = playerWin();
     if (winner) {
-      playerText.innerHTML = `${currentPlayer} GANASTE!`;
+      ganadorText.innerHTML = `${currentPlayer} GANASTE!`;
       highlightWin(winner);
       return;
     }

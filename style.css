@@ -71,3 +71,8 @@ button:hover {
 .winning-box {
   animation: winnerHighlight 1s infinite;
 }
+
+h2 {
+  color: #9a87e2;
+  font-size: 1.5em;
+}
