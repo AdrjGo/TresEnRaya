@@ -68,20 +68,4 @@ function playerWin() {
 
 startGame();
 
-restartBtn.addEventListener("click", restartGame);
-function restartGame() {
-  // Reiniciar el texto del jugador
-  playerText.innerHTML = "TRES EN RAYA";
 
-  // Limpiar el contenido de cada celda del tablero
-  boxes.forEach(box => {
-    box.innerText = "";
-    box.classList.remove("X", "O", "winning-box");
-  });
-
-  // Reiniciar el array de espacios
-  spaces = Array(9).fill(null);
-
-  // Reiniciar el jugador actual a X
-  currentPlayer = X_TEXT;
-}
