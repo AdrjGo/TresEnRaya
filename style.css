@@ -1,78 +1,73 @@
 body {
-    font-family: 'Finger Paint', cursive;
-    background-color: #11153a;
-  }
-  
-  .container {
-    text-align: center;
-    margin-top: 50px;
-  }
-  
-  h1 {
-    color: #9a87e2;
-  }
-  
-  #board {
-    display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-gap: 10px;
-    margin-top: 20px;
-    align-items: start;
-    justify-content: center;
-  }
-  
-  .box {
-    width: 100px;
-    height: 100px;
-    background-color: #c06d97;
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 4em;
-    color: #000000;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s; /* Transición suave para la transformación y la sombra */
-    perspective: 1000px; /* Añade perspectiva para el efecto 3D */
-  }
-  
-  .box:hover {
-    transform: rotateX(15deg) rotateY(15deg); /* Rotación en los ejes X e Y para el efecto 3D */
-    box-shadow: 0 10px 20px rgba(228, 220, 220, 0.3); /* Añade una sombra para simular profundidad */
-  }
+  font-family: "Finger Paint", cursive;
+  background-color: #11153a;
+}
 
-  
-  
-  
-  button {
-    background-color: #a487d3;
-    color: #000000;
-    border: none;
-    padding: 10px 20px;
-    font-size: 2em;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 20px; 
-  }
-  
-  button:hover {
-    background-color: #830000;
-  }
-  
-  @keyframes winnerHighlight {
-    0% {
-      background-color: #ff6347;
-    }
-    50% {
-      background-color: transparent;
-    }
-    100% {
-      background-color: #ff6347;
-    }
-  }
-  
-  .winning-box {
-    animation: winnerHighlight 1s infinite;
-  }
-  
+.container {
+  text-align: center;
+  margin-top: 50px;
+}
 
+h1 {
+  color: #9a87e2;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 10px;
+  margin-top: 20px;
+  align-items: start;
+  justify-content: center;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: #c06d97;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4em;
+  color: #000000;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s; /* Transición suave para la transformación y la sombra */
+  perspective: 1000px; /* Añade perspectiva para el efecto 3D */
+}
+
+.box:hover {
+  transform: rotateX(15deg) rotateY(15deg); /* Rotación en los ejes X e Y para el efecto 3D */
+  box-shadow: 0 10px 20px rgba(228, 220, 220, 0.3); /* Añade una sombra para simular profundidad */
+}
+
+button {
+  background-color: #a487d3;
+  color: #000000;
+  border: none;
+  padding: 10px 20px;
+  font-size: 2em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #830000;
+}
+
+@keyframes winnerHighlight {
+  0% {
+    background-color: #ff6347;
+  }
+  50% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #ff6347;
+  }
+}
+
+.winning-box {
+  animation: winnerHighlight 1s infinite;
+}
